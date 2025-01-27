@@ -8,6 +8,29 @@ This driver supports at most one instance of the ST25R on the SPI or I2C bus.
 ST's RFAL library is included for driving the IC, with Kconfig variables
 defined to allow configuration and feature selection.
 
+## Add module `zephyr-st25r` to you `west.yml` file
+
+In your workspace, add the following entry to your manifest file west.yml :
+
+```
+    - name: zephyr-st25r
+      url: https://github.com/vouch-opensource/zephyr-st25r.git
+      revision: main  # Or the specific branch or commit hash you want
+      path: modules/lib/zephyr-st25r
+
+```
+
+If you followed the [getting started](https://docs.zephyrproject.org/latest/develop/getting_started/index.html) procedure of zephyr, the manifest file is in `~/zephyrproject/zephyr/west.yml`.
+
+Update west to download the module :
+
+```bash
+west update
+```
+
+## Add a st,st25r SPI to your device configuration
+
+
 To use, after incorporating the module into your build, add an 
 `st,st25r` compatible SPI or I2C configuration to your device tree
 
@@ -48,6 +71,16 @@ void init() {
    /* Use RFAL to poll NFC. */
 }
 ```
+
+
+## Test using a complete project
+
+You can now download a complete example :
+
+```bash
+git clone 
+```
+
 
 See the `zephyr-nfc08a1` repo for a complete example of using this driver
 with the X-NUCLEO-NFC08A1 dev board.
