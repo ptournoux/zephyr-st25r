@@ -75,12 +75,17 @@ void init() {
 
 ## Test using a complete project
 
-You can now download a complete example :
+You can now download a complete example. E.g. in your workspace `~/zephyrproject/zephyr` run :
 
 ```bash
-git clone 
+git clone https://github.com/ptournoux/zephyr-app-nfc08a1
+```
+
+Then run :
+
+```
+west build --board=nucleo_l073rz -p always zephyr-app-nfc08a1
 ```
 
 
-See the `zephyr-nfc08a1` repo for a complete example of using this driver
-with the X-NUCLEO-NFC08A1 dev board.
+Both the module and sample application comes from https://github.com/vouch-opensource/zephyr-nfc08a1 with some minor modifications to make them compatible with Zephyr 4.
