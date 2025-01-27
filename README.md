@@ -14,7 +14,7 @@ In your workspace, add the following entry to your manifest file west.yml :
 
 ```
     - name: zephyr-st25r
-      url: https://github.com/vouch-opensource/zephyr-st25r.git
+      url: https://github.com/ptournoux/zephyr-st25r.git
       revision: main  # Or the specific branch or commit hash you want
       path: modules/lib/zephyr-st25r
 
